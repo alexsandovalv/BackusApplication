@@ -1,0 +1,20 @@
+{
+    "backus3App": {
+        "maquina" : {
+            "home": {
+                "title": "Maquinas",
+                "createLabel": "Crear una nueva maquina",
+                "createOrEditLabel": "Crear o Actualiza una Maquina"
+            },
+            "delete": {
+                "question": "Estas seguro de querer eliminar la Maquina {{ id }}?"
+            },
+            "detail": {
+                "title": "Maquina"
+            },
+            "costo": "Costo",
+            "nombre": "Nombre",
+            "capacidadProduccion": "Capacidad Producción"
+        }
+    }
+}

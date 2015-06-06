@@ -1,0 +1,24 @@
+{
+    "backus3App": {
+        "programaProduccion" : {
+            "home": {
+                "title": "ProgramaProduccions",
+                "createLabel": "Create a new ProgramaProduccion",
+                "createOrEditLabel": "Create or edit a ProgramaProduccion",
+                "lingoProcess" : "Process Lingo"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete ProgramaProduccion {{ id }}?"
+            },
+            "detail": {
+                "title": "ProgramaProduccion"
+            },
+            "cantidad": "Cantidad",
+            "diaTrabajada": "DiaTrabajada",
+            "fechaProgramada": "FechaProgramada",
+            "medidasLts": "medidasLts",
+            "producto": "producto",
+            "planSolucion": "planSolucion"
+        }
+    }
+}

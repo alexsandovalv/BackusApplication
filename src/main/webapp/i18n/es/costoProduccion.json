@@ -1,0 +1,21 @@
+{
+    "backus3App": {
+        "costoProduccion" : {
+            "home": {
+                "title": "Costo Producciones",
+                "createLabel": "Crear",
+                "createOrEditLabel": "Crear o editar"
+            },
+            "delete": {
+                "question": "Estas seguro de querer eliminar un costo de produccion {{ id }}?"
+            },
+            "detail": {
+                "title": "Costo Producción"
+            },
+            "manoObra": "Mano de Obra",
+            "horaMaquina": "Hora Máquina",
+            "total": "Total",
+            "planSolucion": "planSolucion"
+        }
+    }
+}

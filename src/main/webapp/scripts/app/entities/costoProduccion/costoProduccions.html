@@ -1,0 +1,157 @@
+<div>
+
+    <h2 translate="backus3App.costoProduccion.home.title">CostoProduccion</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveCostoProduccionModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="backus3App.costoProduccion.home.createLabel">Create a new CostoProduccion</span>
+    </button>
+    <div class="modal fade" id="saveCostoProduccionModal" tabindex="-1" role="dialog" aria-labelledby="myCostoProduccionLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myCostoProduccionLabel" translate="backus3App.costoProduccion.home.createOrEditLabel">Create or edit a CostoProduccion</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="costoProduccion.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="backus3App.costoProduccion.manoObra">ManoObra</label>
+                            <input type="number" class="form-control" name="manoObra"
+                                   ng-model="costoProduccion.manoObra" required>
+
+                            <div ng-show="editForm.manoObra.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.manoObra.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.manoObra.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="backus3App.costoProduccion.horaMaquina">HoraMaquina</label>
+                            <input type="number" class="form-control" name="horaMaquina"
+                                   ng-model="costoProduccion.horaMaquina" required>
+
+                            <div ng-show="editForm.horaMaquina.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.horaMaquina.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.horaMaquina.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="backus3App.costoProduccion.total">Total</label>
+                            <input type="number" class="form-control" name="total"
+                                   ng-model="costoProduccion.total">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="backus3App.costoProduccion.planSolucion">planSolucion</label>
+                            <select class="form-control" name="planSolucion" ng-model="costoProduccion.planSolucion.id" ng-options="planSolucion.id as planSolucion.id for planSolucion in plansolucions">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteCostoProduccionConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(costoProduccion.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="backus3App.costoProduccion.delete.question" translate-values="{id: '{{costoProduccion.id}}'}">Are you sure you want to delete this CostoProduccion?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="backus3App.costoProduccion.manoObra">ManoObra</th>
+                    <th translate="backus3App.costoProduccion.horaMaquina">HoraMaquina</th>
+                    <th translate="backus3App.costoProduccion.total">Total</th>
+                    <th translate="backus3App.costoProduccion.planSolucion">planSolucion</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="costoProduccion in costoProduccions">
+                    <td><a ui-sref="costoProduccionDetail({id:costoProduccion.id})">{{costoProduccion.id}}</a></td>
+                    <td>{{costoProduccion.manoObra}}</td>
+                    <td>{{costoProduccion.horaMaquina}}</td>
+                    <td>{{costoProduccion.total}}</td>
+                    <td>{{costoProduccion.planSolucion.id}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="costoProduccionDetail({id:costoProduccion.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(costoProduccion.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(costoProduccion.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pager">
+                <li ng-show="links['first']" ng-click="loadPage(links['first'])"><a href="#">&lt;&lt;</a></li>
+                <li ng-show="links['prev']" ng-click="loadPage(links['prev'])"><a href="#">&lt;</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a href="#">&gt;</a></li>
+                <li ng-show="links['last']" ng-click="loadPage(links['last'])"><a href="#">&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

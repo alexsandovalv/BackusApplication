@@ -1,0 +1,21 @@
+{
+    "backus3App": {
+        "costoProduccion" : {
+            "home": {
+                "title": "CostoProduccions",
+                "createLabel": "Create a new CostoProduccion",
+                "createOrEditLabel": "Create or edit a CostoProduccion"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete CostoProduccion {{ id }}?"
+            },
+            "detail": {
+                "title": "CostoProduccion"
+            },
+            "manoObra": "ManoObra",
+            "horaMaquina": "HoraMaquina",
+            "total": "Total",
+            "planSolucion": "planSolucion"
+        }
+    }
+}

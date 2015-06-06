@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity ProgramaProduccion.
+    -->
+    <changeSet id="20150406114632" author="jhipster">
+        <createTable tableName="T_PROGRAMAPRODUCCION">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="cantidad" type="decimal(10,2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="dia_trabajada" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="fecha_programada" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            <column name="medidaslts_id" type="bigint"/>
+            <column name="producto_id" type="bigint"/>
+        </createTable>
+        <dropDefaultValue tableName="T_PROGRAMAPRODUCCION" columnName="fecha_programada" columnDataType="datetime"/>
+
+        
+        <addForeignKeyConstraint baseColumnNames="medidaslts_id"
+                                 baseTableName="T_PROGRAMAPRODUCCION"
+                                 constraintName="fk_programaproduccion_medidaslts_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_MEDIDASLTS"/>
+
+        <addForeignKeyConstraint baseColumnNames="producto_id"
+                                 baseTableName="T_PROGRAMAPRODUCCION"
+                                 constraintName="fk_programaproduccion_producto_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_PRODUCTO"/>
+
+    </changeSet>
+</databaseChangeLog>

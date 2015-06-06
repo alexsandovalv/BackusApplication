@@ -1,0 +1,62 @@
+
+<div>
+    <h2><span translate="backus3App.programaProduccion.detail.title">ProgramaProduccion</span> {{programaProduccion.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="backus3App.programaProduccion.cantidad">Cantidad</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{programaProduccion.cantidad}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.programaProduccion.diaTrabajada">DiaTrabajada</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{programaProduccion.diaTrabajada}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.programaProduccion.fechaProgramada">FechaProgramada</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{programaProduccion.fechaProgramada | date:'dd/MM/yyyy HH:mm'}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.programaProduccion.medidasLts">medidasLts</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{programaProduccion.medidasLts.nombre}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.programaProduccion.producto">producto</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{programaProduccion.producto.nombre}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="programaProduccion"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

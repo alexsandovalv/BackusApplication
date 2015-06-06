@@ -1,0 +1,22 @@
+{
+    "backus3App": {
+        "costoProduccion" : {
+            "home": {
+                "title": "CostoProduccions",
+                "createLabel": "Créer un nouveau CostoProduccion",
+                "createOrEditLabel": "Créer ou éditer un CostoProduccion"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le CostoProduccion {{ id }} ?"
+            },
+            "detail": {
+                "title": "CostoProduccion"
+            },
+            "manoObra": "ManoObra",
+            "horaMaquina": "HoraMaquina",
+            "total": "Total",
+            "planSolucion": "planSolucion"
+        }
+    }
+}
+

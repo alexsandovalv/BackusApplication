@@ -1,0 +1,59 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "planSolucion",
+            "relationshipNameCapitalized": "PlanSolucion",
+            "relationshipFieldName": "planSolucion",
+            "otherEntityName": "planSolucion",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "PlanSolucion",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "manoObra",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "ManoObra",
+            "fieldNameUnderscored": "mano_obra",
+            "fieldInJavaBeanMethod": "ManoObra",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "horaMaquina",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "HoraMaquina",
+            "fieldNameUnderscored": "hora_maquina",
+            "fieldInJavaBeanMethod": "HoraMaquina",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "total",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Total",
+            "fieldNameUnderscored": "total",
+            "fieldInJavaBeanMethod": "Total",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150406114959",
+    "pagination": "pager",
+    "validation": true
+}

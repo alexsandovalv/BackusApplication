@@ -1,0 +1,155 @@
+<div>
+
+    <h2 translate="backus3App.capacidadProduccion.home.title">CapacidadProduccion</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveCapacidadProduccionModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="backus3App.capacidadProduccion.home.createLabel">Create a new CapacidadProduccion</span>
+    </button>
+    <div class="modal fade" id="saveCapacidadProduccionModal" tabindex="-1" role="dialog" aria-labelledby="myCapacidadProduccionLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myCapacidadProduccionLabel" translate="backus3App.capacidadProduccion.home.createOrEditLabel">Create or edit a CapacidadProduccion</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="capacidadProduccion.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="backus3App.capacidadProduccion.capacidad">Capacidad</label>
+                            <input type="number" class="form-control" name="capacidad"
+                                   ng-model="capacidadProduccion.capacidad" required>
+
+                            <div ng-show="editForm.capacidad.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.capacidad.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.capacidad.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="backus3App.capacidadProduccion.velocidad">Velocidad</label>
+                            <input type="number" class="form-control" name="velocidad"
+                                   ng-model="capacidadProduccion.velocidad" required>
+
+                            <div ng-show="editForm.velocidad.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.velocidad.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.velocidad.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="backus3App.capacidadProduccion.maquina">maquina</label>
+                            <select class="form-control" name="maquina" ng-model="capacidadProduccion.maquina.id" ng-options="maquina.id as maquina.nombre for maquina in maquinas">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label translate="backus3App.capacidadProduccion.medidasLts">medidasLts</label>
+                            <select class="form-control" name="medidasLts" ng-model="capacidadProduccion.medidasLts.id" ng-options="medidasLts.id as medidasLts.nombre for medidasLts in medidasltss">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label translate="backus3App.capacidadProduccion.producto">producto</label>
+                            <select class="form-control" name="producto" ng-model="capacidadProduccion.producto.id" ng-options="producto.id as producto.nombre for producto in productos">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteCapacidadProduccionConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(capacidadProduccion.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="backus3App.capacidadProduccion.delete.question" translate-values="{id: '{{capacidadProduccion.id}}'}">Are you sure you want to delete this CapacidadProduccion?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="backus3App.capacidadProduccion.capacidad">Capacidad</th>
+                    <th translate="backus3App.capacidadProduccion.velocidad">Velocidad</th>
+                    <th translate="backus3App.capacidadProduccion.maquina">maquina</th>
+                    <th translate="backus3App.capacidadProduccion.medidasLts">medidasLts</th>
+                    <th translate="backus3App.capacidadProduccion.producto">producto</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="capacidadProduccion in capacidadProduccions">
+                    <td><a ui-sref="capacidadProduccionDetail({id:capacidadProduccion.id})">{{capacidadProduccion.id}}</a></td>
+                    <td>{{capacidadProduccion.capacidad}}</td>
+                    <td>{{capacidadProduccion.velocidad}}</td>
+                    <td>{{capacidadProduccion.maquina.nombre}}</td>
+                    <td>{{capacidadProduccion.medidasLts.nombre}}</td>
+                    <td>{{capacidadProduccion.producto.nombre}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="capacidadProduccionDetail({id:capacidadProduccion.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(capacidadProduccion.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(capacidadProduccion.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "capacidadProduccion",
+            "relationshipNameCapitalized": "CapacidadProduccion",
+            "relationshipFieldName": "capacidadProduccion",
+            "otherEntityName": "capacidadProduccion",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "CapacidadProduccion"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Nombre",
+            "fieldNameUnderscored": "nombre",
+            "fieldInJavaBeanMethod": "Nombre",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "cantidad",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Cantidad",
+            "fieldNameUnderscored": "cantidad",
+            "fieldInJavaBeanMethod": "Cantidad",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150406105320",
+    "pagination": "pager",
+    "validation": true
+}

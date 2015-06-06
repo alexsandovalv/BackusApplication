@@ -1,0 +1,81 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "medidasLts",
+            "relationshipNameCapitalized": "MedidasLts",
+            "relationshipFieldName": "medidasLts",
+            "otherEntityName": "medidasLts",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "MedidasLts",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "producto",
+            "relationshipNameCapitalized": "Producto",
+            "relationshipFieldName": "producto",
+            "otherEntityName": "producto",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Producto",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "planSolucion",
+            "relationshipNameCapitalized": "PlanSolucion",
+            "relationshipFieldName": "planSolucion",
+            "otherEntityName": "planSolucion",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "PlanSolucion"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "cantidad",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Cantidad",
+            "fieldNameUnderscored": "cantidad",
+            "fieldInJavaBeanMethod": "Cantidad",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "diaTrabajada",
+            "fieldType": "String",
+            "fieldNameCapitalized": "DiaTrabajada",
+            "fieldNameUnderscored": "dia_trabajada",
+            "fieldInJavaBeanMethod": "DiaTrabajada",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "fechaProgramada",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "FechaProgramada",
+            "fieldNameUnderscored": "fecha_programada",
+            "fieldInJavaBeanMethod": "FechaProgramada",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": true,
+    "fieldsContainDate": false,
+    "changelogDate": "20150406114632",
+    "pagination": "pagination",
+    "validation": true
+}

@@ -1,0 +1,20 @@
+{
+    "backus3App": {
+        "medidasLts" : {
+            "home": {
+                "title": "MedidasLtss",
+                "createLabel": "Create a new MedidasLts",
+                "createOrEditLabel": "Create or edit a MedidasLts"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete MedidasLts {{ id }}?"
+            },
+            "detail": {
+                "title": "MedidasLts"
+            },
+            "nombre": "Nombre",
+            "cantidad": "Cantidad",
+            "capacidadProduccion": "capacidadProduccion"
+        }
+    }
+}

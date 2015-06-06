@@ -1,0 +1,22 @@
+{
+    "backus3App": {
+        "planSolucion" : {
+            "home": {
+                "title": "PlanSolucions",
+                "createLabel": "Create a new PlanSolucion",
+                "createOrEditLabel": "Create or edit a PlanSolucion"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete PlanSolucion {{ id }}?"
+            },
+            "detail": {
+                "title": "PlanSolucion"
+            },
+            "diaTrabajada": "DiaTrabajada",
+            "cantidad": "Cantidad",
+            "programaProduccion": "programaProduccion",
+            "costoProduccion": "costoProduccion",
+            "maquina": "maquina"
+        }
+    }
+}

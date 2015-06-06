@@ -1,0 +1,19 @@
+{
+    "backus3App": {
+        "producto" : {
+            "home": {
+                "title": "Productos",
+                "createLabel": "Create a new Producto",
+                "createOrEditLabel": "Create or edit a Producto"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Producto {{ id }}?"
+            },
+            "detail": {
+                "title": "Producto"
+            },
+            "nombre": "Nombre",
+            "capacidadProduccion": "capacidadProduccion"
+        }
+    }
+}

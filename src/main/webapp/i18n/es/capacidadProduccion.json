@@ -1,0 +1,22 @@
+{
+    "backus3App": {
+        "capacidadProduccion" : {
+            "home": {
+                "title": "Capacidad de Producciones",
+                "createLabel": "Crear",
+                "createOrEditLabel": "Crear o editar una Capacidad de Produccion"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete CapacidadProduccion {{ id }}?"
+            },
+            "detail": {
+                "title": "Capacidad Produccion"
+            },
+            "capacidad": "Capacidad",
+            "velocidad": "Velocidad",
+            "maquina": "Máquina",
+            "medidasLts": "Lts",
+            "producto": "producto"
+        }
+    }
+}

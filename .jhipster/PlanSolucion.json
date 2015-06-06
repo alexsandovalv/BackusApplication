@@ -1,0 +1,63 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "programaProduccion",
+            "relationshipNameCapitalized": "ProgramaProduccion",
+            "relationshipFieldName": "programaProduccion",
+            "otherEntityName": "programaProduccion",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "ProgramaProduccion",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "costoProduccion",
+            "relationshipNameCapitalized": "CostoProduccion",
+            "relationshipFieldName": "costoProduccion",
+            "otherEntityName": "costoProduccion",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "CostoProduccion"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "maquina",
+            "relationshipNameCapitalized": "Maquina",
+            "relationshipFieldName": "maquina",
+            "otherEntityName": "maquina",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Maquina",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "diaTrabajada",
+            "fieldType": "String",
+            "fieldNameCapitalized": "DiaTrabajada",
+            "fieldNameUnderscored": "dia_trabajada",
+            "fieldInJavaBeanMethod": "DiaTrabajada",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "cantidad",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Cantidad",
+            "fieldNameUnderscored": "cantidad",
+            "fieldInJavaBeanMethod": "Cantidad",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150406114817",
+    "pagination": "pagination",
+    "validation": false
+}

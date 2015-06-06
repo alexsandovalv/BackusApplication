@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="backus3App.costoProduccion.detail.title">CostoProduccion</span> {{costoProduccion.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="backus3App.costoProduccion.manoObra">ManoObra</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{costoProduccion.manoObra}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.costoProduccion.horaMaquina">HoraMaquina</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{costoProduccion.horaMaquina}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.costoProduccion.total">Total</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{costoProduccion.total}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.costoProduccion.planSolucion">planSolucion</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{costoProduccion.planSolucion.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="costoProduccion"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

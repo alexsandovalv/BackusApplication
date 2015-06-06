@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "baseName": "backus3",
+    "packageName": "edu.upc.backus",
+    "packageFolder": "edu/upc/backus",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "useCompass": false,
+    "buildTool": "gradle",
+    "frontendBuilder": "grunt",
+    "javaVersion": "7",
+    "rememberMeKey": "4ea1401d1a31f733499ba79d04e12b6e2b13c90b"
+  }
+}

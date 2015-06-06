@@ -1,0 +1,21 @@
+{
+    "backus3App": {
+        "maquina" : {
+            "home": {
+                "title": "Maquinas",
+                "createLabel": "Créer un nouveau Maquina",
+                "createOrEditLabel": "Créer ou éditer un Maquina"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Maquina {{ id }} ?"
+            },
+            "detail": {
+                "title": "Maquina"
+            },
+            "costo": "Costo",
+            "nombre": "Nombre",
+            "capacidadProduccion": "capacidadProduccion"
+        }
+    }
+}
+

@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="backus3App.planSolucion.detail.title">PlanSolucion</span> {{planSolucion.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="backus3App.planSolucion.diaTrabajada">DiaTrabajada</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{planSolucion.diaTrabajada}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.planSolucion.cantidad">Cantidad</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{planSolucion.cantidad}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.planSolucion.programaProduccion">programaProduccion</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{planSolucion.programaProduccion.id}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="backus3App.planSolucion.maquina">maquina</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{planSolucion.maquina.nombre}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="planSolucion"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

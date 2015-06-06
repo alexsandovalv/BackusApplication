@@ -1,0 +1,20 @@
+{
+    "backus3App": {
+        "medidasLts" : {
+            "home": {
+                "title": "Medidas en Litros",
+                "createLabel": "Crear",
+                "createOrEditLabel": "Crear o editar"
+            },
+            "delete": {
+                "question": "Estas seguro de querer eliminar la medida {{ id }}?"
+            },
+            "detail": {
+                "title": "Medidas en Litros"
+            },
+            "nombre": "Nombre",
+            "cantidad": "Cantidad",
+            "capacidadProduccion": "Capacidad de Producción"
+        }
+    }
+}

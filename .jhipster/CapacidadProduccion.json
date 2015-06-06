@@ -1,0 +1,70 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "maquina",
+            "relationshipNameCapitalized": "Maquina",
+            "relationshipFieldName": "maquina",
+            "otherEntityName": "maquina",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Maquina",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "medidasLts",
+            "relationshipNameCapitalized": "MedidasLts",
+            "relationshipFieldName": "medidasLts",
+            "otherEntityName": "medidasLts",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "MedidasLts",
+            "otherEntityField": "nombre"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "producto",
+            "relationshipNameCapitalized": "Producto",
+            "relationshipFieldName": "producto",
+            "otherEntityName": "producto",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Producto",
+            "otherEntityField": "nombre"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "capacidad",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Capacidad",
+            "fieldNameUnderscored": "capacidad",
+            "fieldInJavaBeanMethod": "Capacidad",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "velocidad",
+            "fieldType": "BigDecimal",
+            "fieldNameCapitalized": "Velocidad",
+            "fieldNameUnderscored": "velocidad",
+            "fieldInJavaBeanMethod": "Velocidad",
+            "fieldValidate": true,
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": true,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150406104714",
+    "pagination": "no",
+    "validation": true
+}

@@ -1,0 +1,192 @@
+<div>
+
+    <h2 translate="backus3App.programaProduccion.home.title">ProgramaProduccion</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveProgramaProduccionModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="backus3App.programaProduccion.home.createLabel">Create a new ProgramaProduccion</span>
+    </button>
+    
+    <button class="btn btn-primary btn-lg" id="btnLingo">
+        <span class="glyphicon glyphicon-flash"></span> 
+        <span translate="backus3App.programaProduccion.home.lingoProcess">Process Lingo</span>
+    </button>
+    
+    <script type="text/javascript">
+    	$(function(){
+    		$("#btnLingo").click(function(){
+    			var apiUrl = window.location.protocol + "//" + window.location.host+"//api/programaProduccions/lingo";
+    			$.get( apiUrl, function( data ) {
+					  
+				});    			
+    		});    		
+    	});
+    </script>
+    
+    <div class="modal fade" id="saveProgramaProduccionModal" tabindex="-1" role="dialog" aria-labelledby="myProgramaProduccionLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myProgramaProduccionLabel" translate="backus3App.programaProduccion.home.createOrEditLabel">Create or edit a ProgramaProduccion</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="programaProduccion.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="backus3App.programaProduccion.cantidad">Cantidad</label>
+                            <input type="number" class="form-control" name="cantidad"
+                                   ng-model="programaProduccion.cantidad" required>
+
+                            <div ng-show="editForm.cantidad.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.cantidad.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.cantidad.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="backus3App.programaProduccion.diaTrabajada">DiaTrabajada</label>
+                            <input type="text" class="form-control" name="diaTrabajada"
+                                   ng-model="programaProduccion.diaTrabajada" required>
+
+                            <div ng-show="editForm.diaTrabajada.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.diaTrabajada.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="backus3App.programaProduccion.fechaProgramada">FechaProgramada</label>
+                            <input type="datetime-local" class="form-control" name="fechaProgramada"
+                                   ng-model="programaProduccion.fechaProgramada" ng-model-options="{timezone: 'UTC'}" required>
+
+                            <div ng-show="editForm.fechaProgramada.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.fechaProgramada.$error.required" translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                                <p class="help-block"
+                                   ng-show="editForm.fechaProgramada.$error.datetimelocal" translate="entity.validation.datetimelocal">
+                                    This field should be a date and time.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="backus3App.programaProduccion.medidasLts">medidasLts</label>
+                            <select class="form-control" name="medidasLts" ng-model="programaProduccion.medidasLts.id" ng-options="medidasLts.id as medidasLts.nombre for medidasLts in medidasltss">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label translate="backus3App.programaProduccion.producto">producto</label>
+                            <select class="form-control" name="producto" ng-model="programaProduccion.producto.id" ng-options="producto.id as producto.nombre for producto in productos">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteProgramaProduccionConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(programaProduccion.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="backus3App.programaProduccion.delete.question" translate-values="{id: '{{programaProduccion.id}}'}">Are you sure you want to delete this ProgramaProduccion?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="backus3App.programaProduccion.cantidad">Cantidad</th>
+                    <th translate="backus3App.programaProduccion.diaTrabajada">DiaTrabajada</th>
+                    <th translate="backus3App.programaProduccion.fechaProgramada">FechaProgramada</th>
+                    <th translate="backus3App.programaProduccion.medidasLts">medidasLts</th>
+                    <th translate="backus3App.programaProduccion.producto">producto</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="programaProduccion in programaProduccions">
+                    <td><a ui-sref="programaProduccionDetail({id:programaProduccion.id})">{{programaProduccion.id}}</a></td>
+                    <td>{{programaProduccion.cantidad}}</td>
+                    <td>{{programaProduccion.diaTrabajada}}</td>
+                    <td>{{programaProduccion.fechaProgramada | date:"dd/MM/yyyy HH:mm"}}</td>
+                    <td>{{programaProduccion.medidasLts.nombre}}</td>
+                    <td>{{programaProduccion.producto.nombre}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="programaProduccionDetail({id:programaProduccion.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(programaProduccion.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(programaProduccion.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li ng-show="links['first']" ng-click="loadPage(links['first'])"><a>&lt;&lt;</a></li>
+                <li ng-show="links['prev']" ng-click="loadPage(links['prev'])"><a>&lt;</a></li>
+                <li ng-show="page > 2" ng-click="loadPage(page - 2)"><a>{{page - 2}}</a></li>
+                <li ng-show="page > 1" ng-click="loadPage(page - 1)"><a>{{page - 1}}</a></li>
+                <li class="active"><a>{{page}}</a></li>
+                <li ng-show="page < links['last']" ng-click="loadPage(page + 1)"><a>{{page + 1}}</a></li>
+                <li ng-show="page < links['last'] - 1" ng-click="loadPage(page + 2)"><a>{{page + 2}}</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a>&gt;</a></li>
+                <li ng-show="links['last']" ng-click="loadPage(links['last'])"><a>&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
